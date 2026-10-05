@@ -1,0 +1,1197 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Manasa Jino | Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#07070d;
+    color:#f5f4ff;
+    font-family:Inter,Arial,sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+/* Background grid */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.15;
+    background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+    background-size:40px 40px;
+}
+
+:root{
+    --purple:#b86cff;
+    --blue:#42e8ff;
+    --dark:#07070d;
+    --panel:#11111b;
+    --muted:#a4a1b5;
+}
+
+/* NAVBAR */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:75px;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 7%;
+
+    background:rgba(7,7,13,.75);
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+    font-family:"Space Grotesk";
+    font-size:28px;
+    font-weight:700;
+    letter-spacing:-2px;
+}
+
+.logo span{
+    color:var(--purple);
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    color:var(--muted);
+    text-decoration:none;
+    font-size:13px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:white;
+}
+
+.menu{
+    display:none;
+    font-size:25px;
+    cursor:pointer;
+}
+
+/* GENERAL */
+
+section{
+    max-width:1180px;
+    margin:auto;
+    padding:110px 7%;
+}
+
+.eyebrow{
+    color:var(--blue);
+    font-size:11px;
+    letter-spacing:3px;
+    font-weight:800;
+    margin-bottom:18px;
+}
+
+.section-title{
+    font-family:"Space Grotesk";
+    font-size:clamp(38px,5vw,60px);
+    line-height:1;
+    letter-spacing:-2px;
+    margin-bottom:45px;
+}
+
+.section-title span{
+    color:var(--blue);
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    align-items:center;
+
+    gap:40px;
+
+    padding-top:140px;
+}
+
+.hero h1{
+    font-family:"Space Grotesk";
+    font-size:clamp(65px,9vw,110px);
+    line-height:.9;
+    letter-spacing:-6px;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:var(--purple);
+}
+
+.hero h2{
+    font-family:"Space Grotesk";
+    font-size:30px;
+    line-height:1.15;
+}
+
+.hero-text{
+    color:var(--muted);
+    max-width:590px;
+    margin:22px 0 30px;
+}
+
+.buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:13px 20px;
+    border-radius:50px;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:700;
+}
+
+.primary{
+    background:linear-gradient(100deg,var(--purple),#735cff);
+}
+
+.secondary{
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.primary:hover,
+.secondary:hover{
+    transform:translateY(-3px);
+}
+
+/* HERO CARD */
+
+.hero-art{
+    position:relative;
+    height:530px;
+
+    display:grid;
+    place-items:center;
+}
+
+.profile-card{
+    width:320px;
+    height:420px;
+
+    padding:15px;
+
+    border-radius:28px;
+
+    background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.12),
+        rgba(255,255,255,.025)
+    );
+
+    border:1px solid rgba(255,255,255,.15);
+
+    transform:rotate(4deg);
+
+    box-shadow:0 30px 100px rgba(0,0,0,.5);
+
+    z-index:2;
+}
+
+.photo{
+    height:82%;
+
+    border-radius:20px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(135deg,#20182d,#111b29);
+
+    border:1px dashed rgba(255,255,255,.2);
+}
+
+.initials{
+    font-family:"Space Grotesk";
+    font-size:75px;
+    font-weight:700;
+
+    background:linear-gradient(120deg,var(--purple),var(--blue));
+    color:transparent;
+    background-clip:text;
+}
+
+.photo p{
+    color:var(--muted);
+    font-size:9px;
+    letter-spacing:2px;
+}
+
+.card-bottom{
+    display:flex;
+    justify-content:space-between;
+
+    margin-top:12px;
+
+    color:var(--muted);
+    font-size:9px;
+}
+
+/* FLOATING TAGS */
+
+.tag{
+    position:absolute;
+
+    background:rgba(16,16,26,.9);
+    border:1px solid rgba(255,255,255,.1);
+
+    padding:10px 14px;
+
+    border-radius:13px;
+
+    font-size:11px;
+    font-weight:700;
+
+    z-index:5;
+}
+
+.tag1{
+    top:20%;
+    left:0;
+}
+
+.tag2{
+    bottom:20%;
+    right:0;
+}
+
+.tag3{
+    top:8%;
+    right:5%;
+}
+
+/* ABOUT */
+
+.about{
+    display:grid;
+    grid-template-columns:1.4fr .8fr;
+    gap:70px;
+}
+
+.about p{
+    color:var(--muted);
+    margin-bottom:18px;
+}
+
+.big-text{
+    font-family:"Space Grotesk";
+    font-size:32px;
+    line-height:1.3;
+    color:white !important;
+}
+
+.quote{
+    padding:32px;
+
+    border-radius:25px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(184,108,255,.13),
+        rgba(66,232,255,.05)
+    );
+
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.quote-mark{
+    color:var(--purple);
+    font-size:65px;
+}
+
+.quote p{
+    color:white;
+    font-family:"Space Grotesk";
+    font-size:25px;
+}
+
+/* EDUCATION */
+
+.timeline{
+    border-left:1px solid rgba(255,255,255,.12);
+    padding-left:35px;
+
+    display:grid;
+    gap:35px;
+}
+
+.education-card{
+    position:relative;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.035);
+
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.education-card::before{
+    content:"";
+    position:absolute;
+
+    width:12px;
+    height:12px;
+
+    border-radius:50%;
+
+    background:var(--purple);
+
+    left:-42px;
+    top:28px;
+
+    box-shadow:0 0 20px var(--purple);
+}
+
+.year{
+    color:var(--blue);
+    font-size:10px;
+    letter-spacing:2px;
+    font-weight:800;
+}
+
+.education-card h3{
+    font-family:"Space Grotesk";
+    font-size:24px;
+    margin-top:5px;
+}
+
+.education-card p{
+    color:#ddd;
+}
+
+.education-card small{
+    color:var(--muted);
+}
+
+/* SKILLS */
+
+.skills{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.skill{
+    padding:27px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.025);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.3s;
+}
+
+.skill:hover{
+    transform:translateY(-7px);
+
+    border-color:rgba(184,108,255,.5);
+
+    background:rgba(184,108,255,.06);
+}
+
+.skill-number{
+    color:var(--blue);
+    font-family:"Space Grotesk";
+    font-weight:700;
+}
+
+.skill h3{
+    font-family:"Space Grotesk";
+    font-size:21px;
+    margin:15px 0 7px;
+}
+
+.skill p{
+    color:var(--muted);
+    font-size:13px;
+}
+
+/* HIGHLIGHTS */
+
+.highlights{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.highlight{
+    padding:30px;
+
+    border-radius:22px;
+
+    background:#0d0d16;
+
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.highlight-number{
+    font-family:"Space Grotesk";
+    font-size:44px;
+    font-weight:700;
+
+    background:linear-gradient(90deg,var(--purple),var(--blue));
+    color:transparent;
+    background-clip:text;
+}
+
+.highlight h3{
+    font-family:"Space Grotesk";
+    font-size:21px;
+}
+
+.highlight p{
+    color:var(--muted);
+    font-size:13px;
+}
+
+/* INTERESTS */
+
+.interests{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:25px;
+}
+
+.interests span{
+    border:1px solid rgba(255,255,255,.1);
+    padding:9px 14px;
+    border-radius:50px;
+
+    color:var(--muted);
+
+    font-size:11px;
+}
+
+/* CONTACT */
+
+.contact-box{
+    text-align:center;
+
+    padding:75px 25px;
+
+    border-radius:30px;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(184,108,255,.12),
+        transparent 55%
+    );
+}
+
+.contact-box h2{
+    font-family:"Space Grotesk";
+    font-size:clamp(40px,6vw,75px);
+    line-height:1;
+}
+
+.contact-box h2 span{
+    color:var(--purple);
+}
+
+.contact-box p{
+    color:var(--muted);
+    max-width:550px;
+    margin:20px auto 28px;
+}
+
+.email{
+    color:var(--blue);
+    font-family:"Space Grotesk";
+    font-size:18px;
+    text-decoration:none;
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid rgba(255,255,255,.08);
+
+    padding:25px 7%;
+
+    display:flex;
+    justify-content:space-between;
+
+    color:#686676;
+
+    font-size:10px;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .nav-links{
+        display:none;
+
+        position:absolute;
+        top:75px;
+        left:0;
+
+        width:100%;
+
+        background:#090910;
+
+        padding:25px;
+
+        flex-direction:column;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        padding-top:120px;
+    }
+
+    .hero-art{
+        order:-1;
+        height:420px;
+    }
+
+    .hero h1{
+        font-size:65px;
+    }
+
+    .hero h2{
+        font-size:23px;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .skills,
+    .highlights{
+        grid-template-columns:1fr;
+    }
+
+    footer{
+        flex-direction:column;
+        gap:10px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav class="navbar">
+
+    <a href="#home" class="logo">
+        MJ<span>.</span>
+    </a>
+
+    <div class="menu" onclick="toggleMenu()">
+        ☰
+    </div>
+
+    <div class="nav-links" id="navLinks">
+
+        <a href="#about">About</a>
+
+        <a href="#education">Education</a>
+
+        <a href="#skills">Skills</a>
+
+        <a href="#highlights">Highlights</a>
+
+        <a href="#contact">Contact</a>
+
+    </div>
+
+</nav>
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+    <div>
+
+        <p class="eyebrow">
+            HELLO, I'M
+        </p>
+
+        <h1>
+            Manasa <span>Jino</span>
+        </h1>
+
+        <h2>
+            Integrated MCA Student & Future Tech Professional
+        </h2>
+
+        <p class="hero-text">
+            Calm by nature, curious by choice — learning technology,
+            expressing ideas, and building my way toward a future
+            in the world of innovation.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#about" class="btn primary">
+                Explore my journey ↗
+            </a>
+
+            <a href="#contact" class="btn secondary">
+                Let's connect
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-art">
+
+        <div class="profile-card">
+
+            <div class="photo">
+
+                <div class="initials">
+                    MJ
+                </div>
+
+                <p>
+                    YOUR PHOTO
+                </p>
+
+            </div>
+
+            <div class="card-bottom">
+
+                <span>
+                    Kerala
+                </span>
+
+                <span>
+                    2026 →
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="tag tag1">
+            💻 Programming
+        </div>
+
+        <div class="tag tag2">
+            📚 Reader
+        </div>
+
+        <div class="tag tag3">
+            💃 Dance
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <p class="eyebrow">
+        01 — ABOUT
+    </p>
+
+    <h2 class="section-title">
+        A little <span>about me</span>
+    </h2>
+
+
+    <div class="about">
+
+        <div>
+
+            <p class="big-text">
+                I'm Manasa — an Integrated MCA student who enjoys
+                the mix of technology, creativity and people.
+            </p>
+
+            <p>
+                I'm naturally calm and enjoy learning at my own pace.
+                I love reading, dancing and discovering new things.
+            </p>
+
+            <p>
+                One of my strengths is explaining ideas clearly.
+                I enjoy presentations, communicating concepts and
+                working together with a team.
+            </p>
+
+            <p>
+                Right now, I'm building my foundation in programming
+                and computer applications while exploring where
+                technology can take me.
+            </p>
+
+            <p>
+                My long-term goal is to become a confident professional
+                and build a successful career in an MNC.
+            </p>
+
+        </div>
+
+
+        <div class="quote">
+
+            <span class="quote-mark">
+                “
+            </span>
+
+            <p>
+                Learn something.
+                Explain it.
+                Build something.
+                Repeat.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+    <p class="eyebrow">
+        02 — EDUCATION
+    </p>
+
+    <h2 class="section-title">
+        My learning <span>journey</span>
+    </h2>
+
+
+    <div class="timeline">
+
+
+        <div class="education-card">
+
+            <div class="year">
+                2026 — PRESENT
+            </div>
+
+            <h3>
+                Integrated MCA — 1st Year, 1st Semester
+            </h3>
+
+            <p>
+                Rajagiri College of Social Sciences
+            </p>
+
+            <small>
+                Building foundations in computer applications,
+                programming and problem solving.
+            </small>
+
+        </div>
+
+
+        <div class="education-card">
+
+            <div class="year">
+                CLASS 12
+            </div>
+
+            <h3>
+                Higher Secondary
+            </h3>
+
+            <p>
+                Vimala Public School, Thodupuzha
+            </p>
+
+            <small>
+                Completed higher secondary education with a strong
+                academic foundation.
+            </small>
+
+        </div>
+
+
+        <div class="education-card">
+
+            <div class="year">
+                CLASS 10
+            </div>
+
+            <h3>
+                Secondary School
+            </h3>
+
+            <p>
+                Sanjo CMI Public School
+            </p>
+
+            <small>
+                Completed Class 10 with distinction / first-class performance.
+            </small>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <p class="eyebrow">
+        03 — SKILLS
+    </p>
+
+    <h2 class="section-title">
+        Things I bring to the <span>table</span>
+    </h2>
+
+
+    <div class="skills">
+
+
+        <div class="skill">
+
+            <span class="skill-number">
+                01
+            </span>
+
+            <h3>
+                Programming
+            </h3>
+
+            <p>
+                Learning C programming and strengthening
+                my problem-solving mindset.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <span class="skill-number">
+                02
+            </span>
+
+            <h3>
+                Presentations
+            </h3>
+
+            <p>
+                Good at breaking down ideas and explaining
+                them in a simple and understandable way.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <span class="skill-number">
+                03
+            </span>
+
+            <h3>
+                Teamwork
+            </h3>
+
+            <p>
+                Enjoy collaborating, sharing ideas and
+                contributing to a team.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <span class="skill-number">
+                04
+            </span>
+
+            <h3>
+                Communication
+            </h3>
+
+            <p>
+                Comfortable expressing ideas clearly
+                and confidently.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <span class="skill-number">
+                05
+            </span>
+
+            <h3>
+                Problem Solving
+            </h3>
+
+            <p>
+                Practising coding challenges and learning
+                to approach problems step by step.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <span class="skill-number">
+                06
+            </span>
+
+            <h3>
+                Continuous Learning
+            </h3>
+
+            <p>
+                Curious about technology and always ready
+                to learn something new.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- HIGHLIGHTS -->
+
+<section id="highlights">
+
+    <p class="eyebrow">
+        04 — HIGHLIGHTS
+    </p>
+
+    <h2 class="section-title">
+        Small wins, <span>big direction</span>
+    </h2>
+
+
+    <div class="highlights">
+
+
+        <div class="highlight">
+
+            <div class="highlight-number">
+                3★
+            </div>
+
+            <h3>
+                HackerRank
+            </h3>
+
+            <p>
+                3-star achievement while practising
+                programming and problem solving.
+            </p>
+
+        </div>
+
+
+        <div class="highlight">
+
+            <div class="highlight-number">
+                IMCA
+            </div>
+
+            <h3>
+                My Tech Journey
+            </h3>
+
+            <p>
+                Currently taking my first steps into
+                a deeper world of computing.
+            </p>
+
+        </div>
+
+
+        <div class="highlight">
+
+            <div class="highlight-number">
+                MNC
+            </div>
+
+            <h3>
+                Future Goal
+            </h3>
+
+            <p>
+                Aiming to grow into a capable professional
+                and build a career in an MNC.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="interests">
+
+        <span>📚 Reading</span>
+
+        <span>💃 Dance</span>
+
+        <span>💻 Technology</span>
+
+        <span>🧠 Learning</span>
+
+        <span>🤝 Teamwork</span>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <div class="contact-box">
+
+        <p class="eyebrow">
+            05 — CONTACT
+        </p>
+
+        <h2>
+            Let's make something
+            <span>interesting.</span>
+        </h2>
+
+        <p>
+            Have an idea, project, or just want to say hi?
+            I'd love to hear from you.
+        </p>
+
+        <a
+            class="email"
+            href="mailto:manasajino@gmail.com"
+        >
+            manasajino@gmail.com ↗
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <span>
+        © 2026 Manasa Jino
+    </span>
+
+    <span>
+        Designed with curiosity ✦
+    </span>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+    document
+    .getElementById("navLinks")
+    .classList
+    .toggle("active");
+
+}
+
+</script>
+
+
+</body>
+</html>
+```
